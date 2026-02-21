@@ -36,7 +36,7 @@ const MainContent = () => {
             content = <Home />;
             break;
         case RoutePage.BLOG_LIST:
-            content = <Home />; // Reusing Home for list view for now, could be separate
+            content = <BlogList />;
             break;
         case RoutePage.BLOG_POST:
             content = <BlogPost />;
