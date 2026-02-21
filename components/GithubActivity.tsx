@@ -160,7 +160,7 @@ export const GithubActivity = () => {
 
     if (loading) return (
         <div className="mt-20 border border-gray-800 bg-black/50 p-6 rounded text-center font-mono text-xs text-neon-green">
-            <span className="animate-pulse">> ESTABLISHING_SECURE_CONNECTION_TO_GITHUB_API...</span>
+            <span className="animate-pulse">&gt; ESTABLISHING_SECURE_CONNECTION_TO_GITHUB_API...</span>
         </div>
     );
 

@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowRight, Terminal } from 'lucide-react';
 import { useBlog } from '../context/BlogContext';
 import { GithubActivity } from '../components/GithubActivity';
@@ -7,9 +7,19 @@ import { RoutePage } from '../types';
 
 export const Home = () => {
     const { posts, viewPost, setPage } = useBlog();
-    
-    // Only show first 4 posts
-    const featuredPosts = posts.slice(0, 4);
+    const [searchTerm, setSearchTerm] = useState('');
+    const [filteredPosts, setFilteredPosts] = useState(posts);
+
+    useEffect(() => {
+        const lowerCaseSearchTerm = searchTerm.toLowerCase();
+        const results = posts.filter(
+            (post) =>
+                post.title.toLowerCase().includes(lowerCaseSearchTerm) ||
+                post.excerpt.toLowerCase().includes(lowerCaseSearchTerm) ||
+                post.content.toLowerCase().includes(lowerCaseSearchTerm)
+        );
+        setFilteredPosts(results);
+    }, [searchTerm, posts]);
 
     return (
         <div className="max-w-6xl mx-auto px-6 py-12">
@@ -32,12 +42,32 @@ export const Home = () => {
                     >
                         Start Learning <ArrowRight size={16} />
                     </button>
-                    <button className="border border-gray-700 text-gray-300 px-6 py-3 font-bold font-sans text-sm hover:border-neon-green hover:text-neon-green transition-colors rounded-sm">
-                        Read Articles
+                    <button 
+                        onClick={() => setSearchTerm('')} // Clear search when navigating to full list
+                        className="border border-gray-700 text-gray-300 px-6 py-3 font-bold font-sans text-sm hover:border-neon-green hover:text-neon-green transition-colors rounded-sm"
+                    >
+                        All Articles
                     </button>
                 </div>
             </div>
+
+            {/* Search Bar */}
+            <div className="mb-12">
+                <input
+                    type="text"
+                    placeholder="Search articles by title, excerpt, or content..."
+                    className="w-full p-4 bg-gray-900/40 border border-gray-800 rounded-sm text-gray-300 placeholder-gray-600 focus:outline-none focus:border-neon-green/50 transition-colors font-mono text-sm"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                />
+            </div>
             
+            {/* Terminal Divider: Articles */}
+            <div className="flex items-center gap-4 mb-10 text-gray-600 font-mono text-sm">
+                <Terminal size={16} className="text-neon-green" />
+                <span>root@dhx:~/latest_uploads</span>
+                <div className="h-px bg-gray-800 flex-1"></div>
+            </div>
             {/* Terminal Divider: Articles */}
             <div className="flex items-center gap-4 mb-10 text-gray-600 font-mono text-sm">
                 <Terminal size={16} className="text-neon-green" />
@@ -47,45 +77,51 @@ export const Home = () => {
 
             {/* Blog Grid */}
             <div className="grid grid-cols-1 gap-6 mb-20">
-                {featuredPosts.map((post) => (
-                    <article 
-                        key={post.id} 
-                        onClick={() => viewPost(post.id)}
-                        className="flex flex-col md:flex-row gap-6 border border-gray-800 p-6 rounded hover:border-neon-green/50 transition duration-300 bg-gray-900/20 group cursor-pointer hover:bg-gray-900/40"
-                    >
-                        <div className="w-full md:w-56 h-36 shrink-0 relative overflow-hidden border border-gray-700 group-hover:border-neon-green transition-colors">
-                            {post.imageUrl ? (
-                                <img src={post.imageUrl} alt={post.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
-                            ) : (
-                                <div className="w-full h-full bg-gray-800 flex items-center justify-center font-mono text-gray-600">
-                                    NO_IMG
+                {filteredPosts.length > 0 ? (
+                    filteredPosts.map((post) => (
+                        <article 
+                            key={post.id} 
+                            onClick={() => viewPost(post.id)}
+                            className="flex flex-col md:flex-row gap-6 border border-gray-800 p-6 rounded hover:border-neon-green/50 transition duration-300 bg-gray-900/20 group cursor-pointer hover:bg-gray-900/40"
+                        >
+                            <div className="w-full md:w-56 h-36 shrink-0 relative overflow-hidden border border-gray-700 group-hover:border-neon-green transition-colors">
+                                {post.imageUrl ? (
+                                    <img src={post.imageUrl} alt={post.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+                                ) : (
+                                    <div className="w-full h-full bg-gray-800 flex items-center justify-center font-mono text-gray-600">
+                                        NO_IMG
+                                    </div>
+                                )}
+                                <div className="absolute top-0 right-0 bg-black/80 px-2 py-1 text-[10px] font-mono text-neon-green border-l border-b border-gray-700">
+                                    {post.category}
                                 </div>
-                            )}
-                            <div className="absolute top-0 right-0 bg-black/80 px-2 py-1 text-[10px] font-mono text-neon-green border-l border-b border-gray-700">
-                                {post.category}
                             </div>
-                        </div>
-                        
-                        <div className="flex-1 flex flex-col justify-center">
-                            <div className="flex items-center gap-2 text-xs text-neon-green mb-2 font-mono opacity-70">
-                                <span>./{post.category.toLowerCase().replace(' ', '_')}</span>
-                                <span className="text-gray-600">|</span>
-                                <span className="text-gray-500">{post.date}</span>
+                            
+                            <div className="flex-1 flex flex-col justify-center">
+                                <div className="flex items-center gap-2 text-xs text-neon-green mb-2 font-mono opacity-70">
+                                    <span>./{post.category.toLowerCase().replace(' ', '_')}</span>
+                                    <span className="text-gray-600">|</span>
+                                    <span className="text-gray-500">{post.date}</span>
+                                </div>
+                                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-neon-green transition-colors font-sans leading-tight">
+                                    {post.title}
+                                </h3>
+                                <p className="text-sm text-gray-500 mb-4 line-clamp-2 font-mono">
+                                    {post.excerpt}
+                                </p>
+                                <div className="flex items-center gap-2 text-xs font-mono text-gray-600">
+                                    <span>Reading time: {post.readTime}</span>
+                                    <span>//</span>
+                                    <span>Views: {post.views}</span>
+                                </div>
                             </div>
-                            <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-neon-green transition-colors font-sans leading-tight">
-                                {post.title}
-                            </h3>
-                            <p className="text-sm text-gray-500 mb-4 line-clamp-2 font-mono">
-                                {post.excerpt}
-                            </p>
-                            <div className="flex items-center gap-2 text-xs font-mono text-gray-600">
-                                <span>Reading time: {post.readTime}</span>
-                                <span>//</span>
-                                <span>Views: {post.views}</span>
-                            </div>
-                        </div>
-                    </article>
-                ))}
+                        </article>
+                    ))
+                ) : (
+                    <div className="text-center text-gray-500 font-mono text-lg py-10">
+                        No articles found matching your search.
+                    </div>
+                )}
             </div>
 
             {/* Github Activity Section */}

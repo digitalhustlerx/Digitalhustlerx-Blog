@@ -49,7 +49,7 @@ export const Admin = () => {
                         <LayoutDashboard className="text-neon-green" /> 
                         Admin_Console
                     </h1>
-                    <p className="text-gray-500 text-sm mt-2 font-mono">> Access Level: Root</p>
+                    <p className="text-gray-500 text-sm mt-2 font-mono">&gt; Access Level: Root</p>
                 </div>
                 <div className="flex gap-4">
                     <button 
@@ -91,7 +91,7 @@ export const Admin = () => {
                     ))}
                     {posts.length === 0 && (
                         <div className="p-12 text-center text-gray-600 font-mono">
-                            > No entries found in database.
+                            &gt; No entries found in database.
                         </div>
                     )}
                 </div>
