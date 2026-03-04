@@ -7,6 +7,7 @@ import { Home } from './pages/Home';
 import { BlogPost } from './pages/BlogPost';
 import { Admin } from './pages/Admin';
 import { AiMastery } from './pages/AiMastery';
+import { Shop } from './pages/Shop';
 import { RoutePage } from './types';
 
 const TopBar = () => {
@@ -46,6 +47,9 @@ const MainContent = () => {
             break;
         case RoutePage.AI_MASTERY:
             content = <AiMastery />;
+            break;
+        case RoutePage.SHOP:
+            content = <Shop />;
             break;
         default:
             content = <Home />;

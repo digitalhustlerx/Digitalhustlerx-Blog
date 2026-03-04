@@ -26,7 +26,7 @@ export const Admin = () => {
             category: formData.category || 'General',
             excerpt: formData.excerpt,
             content: formData.content,
-            imageUrl: formData.imageUrl || `https://picsum.photos/800/400?random=${Math.floor(Math.random() * 100)}`,
+            imageUrl: formData.imageUrl || '/images/brand-placeholder.svg',
             readTime: formData.readTime
         });
         

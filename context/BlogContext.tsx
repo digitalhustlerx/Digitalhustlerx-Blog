@@ -28,7 +28,7 @@ const INITIAL_POSTS: BlogPost[] = [
     readTime: '8 min',
     date: '2026-02-21',
     views: 1240,
-    imageUrl: 'https://ollama.ai/images/hero.png'
+    imageUrl: '/images/brand-post-ai1.svg'
   },
   {
     id: '2',
@@ -39,7 +39,7 @@ const INITIAL_POSTS: BlogPost[] = [
     readTime: '5 min',
     date: '2026-02-21',
     views: 890,
-    imageUrl: 'https://ollama.ai/images/hero.png'
+    imageUrl: '/images/brand-post-ai2.svg'
   },
   {
     id: '3',
@@ -50,7 +50,18 @@ const INITIAL_POSTS: BlogPost[] = [
     readTime: '6 min',
     date: '2026-02-21',
     views: 2100,
-    imageUrl: 'https://ollama.ai/images/hero.png'
+    imageUrl: '/images/brand-post-ai3.svg'
+  },
+  {
+    id: '4',
+    title: 'From Zero to Deployed: Setting Up a React Blog on a VPS (The Real Story)',
+    category: 'Infrastructure',
+    excerpt: 'DNS, Nginx, Docker volumes, permission errors — and how to fix them. The real story of deploying digitalhustlerx.com.',
+    content: '<h2>The Challenge</h2><p>You\'ve built a beautiful React blog. Now you need it live on your own VPS. Not on GitHub Pages. Not on Vercel. On your domain.</p><p>This is the story of how I deployed digitalhustlerx.com and the 5 things that went wrong...</p><h3>Step 1: DNS Configuration</h3><p>Point your domain to the VPS via cPanel Zone Editor. Change A record from old IP to 72.62.179.49.</p><h3>Step 2: Install Nginx</h3><p>Critical: Use try_files for React Router fallback: try_files $uri $uri/ /index.html;</p><h3>Step 3: Docker Volume Permissions Issue</h3><p>Nginx running as www-data can\'t access files in Docker volumes owned by ubuntu:ubuntu. Solution: Copy files to /var/www/ instead.</p><h3>Step 4: The Fix</h3><p>Copy dist folder to standard web root, fix permissions, restart Nginx.</p><h3>Lessons Learned</h3><p>1. Docker volumes aren\'t directly mountable to host services 2. try_files is critical for SPAs 3. Nginx user permissions matter 4. Test config before restarting 5. Use /var/www/ for host services</p>',
+    readTime: '12 min',
+    date: '2026-03-02',
+    views: 0,
+    imageUrl: '/images/brand-post-infra.svg'
   }
 ];
 

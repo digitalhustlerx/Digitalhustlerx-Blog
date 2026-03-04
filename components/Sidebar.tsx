@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, FileText, Settings, X, Cpu, DollarSign, Zap, Twitter, Github, Linkedin, Youtube, Terminal } from 'lucide-react';
+import { Home, FileText, Settings, X, Cpu, DollarSign, Zap, Twitter, Github, Linkedin, Youtube, Terminal, ShoppingCart } from 'lucide-react';
 import { useBlog } from '../context/BlogContext';
 import { RoutePage } from '../types';
 
@@ -40,7 +40,12 @@ export const Sidebar = () => {
                             <span className="font-mono text-sm">/articles</span>
                         </button>
 
-                         <button onClick={() => setPage(RoutePage.AI_MASTERY)} className="w-full flex items-center gap-3 text-white hover:text-neon-green hover:bg-gray-900 p-3 rounded transition-all group text-left bg-gray-900/50 border border-gray-800">
+                        <button onClick={() => setPage(RoutePage.SHOP)} className="w-full flex items-center gap-3 text-gray-300 hover:text-neon-green hover:bg-gray-900 p-3 rounded transition-all group text-left">
+                            <ShoppingCart size={18} />
+                            <span className="font-mono text-sm">/shop</span>
+                        </button>
+
+                        <button onClick={() => setPage(RoutePage.AI_MASTERY)} className="w-full flex items-center gap-3 text-white hover:text-neon-green hover:bg-gray-900 p-3 rounded transition-all group text-left bg-gray-900/50 border border-gray-800">
                             <Terminal size={18} className="text-neon-green" />
                             <span className="font-mono text-sm font-bold">/cursor_protocol</span>
                         </button>

@@ -22,28 +22,32 @@ export const AiMastery = () => {
             title: 'Install the Tool',
             description: 'Get Cursor on your computer. It looks like a code editor, but it is actually a robot that works for you.',
             duration: '5:00',
-            level: 'Step 1'
+            level: 'Step 1',
+            thumbnail: '/images/brand-module-1.svg'
         },
         {
             id: '2',
             title: 'How to Speak AI',
             description: 'You do not need to learn code syntax. You just need to write clear English instructions. I show you how.',
             duration: '12:20',
-            level: 'Step 2'
+            level: 'Step 2',
+            thumbnail: '/images/brand-module-2.svg'
         },
         {
             id: '3',
             title: 'Build a Real Website',
             description: 'Watch me create a full landing page from scratch just by telling the AI what I want it to look like.',
             duration: '15:45',
-            level: 'Practical'
+            level: 'Practical',
+            thumbnail: '/images/brand-module-3.svg'
         },
         {
             id: '4',
             title: 'Put It On The Internet',
             description: 'Taking the website from your laptop to the real world so anyone can visit it.',
             duration: '8:30',
-            level: 'Final Step'
+            level: 'Final Step',
+            thumbnail: '/images/brand-module-4.svg'
         }
     ];
 
@@ -138,10 +142,11 @@ export const AiMastery = () => {
 
                             {/* Video Thumbnail Placeholder */}
                             <div className="h-56 bg-gray-900 relative border-b border-gray-800 group-hover:border-neon-green/50 transition-colors">
-                                <img 
-                                    src={`https://picsum.photos/800/450?random=${parseInt(module.id) + 20}`} 
-                                    alt={module.title}
-                                    className={`w-full h-full object-cover transition-all duration-500 ${isWatched ? 'grayscale opacity-40' : 'opacity-60 group-hover:opacity-90'}`} 
+                                <img
+                                    src={module.thumbnail}
+                                    alt={`${module.title} thumbnail`}
+                                    loading="lazy"
+                                    className={`w-full h-full object-cover transition-all duration-500 ${isWatched ? 'grayscale opacity-40' : 'opacity-60 group-hover:opacity-90'}`}
                                 />
                                 {/* Play Overlay */}
                                 <div className="absolute inset-0 flex items-center justify-center transition-colors">
