@@ -108,7 +108,7 @@ const ContributionGraph = () => {
 
                 {/* Legend */}
                 <div className="flex items-center justify-between mt-4 text-[10px] text-gray-500 font-mono pt-2 ml-8">
-                    <span className="cursor-pointer hover:text-neon-green transition-colors">Learn how we count contributions</span>
+                    <span className="cursor-pointer hover:text-neon-blue transition-colors">Learn how we count contributions</span>
                     <div className="flex items-center gap-2">
                         <span>Less</span>
                         <div className="flex gap-[3px]">
@@ -159,7 +159,7 @@ export const GithubActivity = () => {
     }, []);
 
     if (loading) return (
-        <div className="mt-20 border border-gray-800 bg-black/50 p-6 rounded text-center font-mono text-xs text-neon-green">
+        <div className="mt-20 border border-gray-800 bg-black/50 p-6 rounded text-center font-mono text-xs text-neon-blue">
             <span className="animate-pulse">&gt; ESTABLISHING_SECURE_CONNECTION_TO_GITHUB_API...</span>
         </div>
     );
@@ -168,7 +168,7 @@ export const GithubActivity = () => {
         <div className="mt-20 border-t border-gray-800 pt-10">
             {/* Header */}
             <div className="flex items-center gap-4 mb-8 text-gray-400 font-mono text-sm">
-                <Github size={16} className="text-neon-green" />
+                <Github size={16} className="text-neon-blue" />
                 <span>root@dhx:~/open_source_activity</span>
                 <div className="h-px bg-gray-800 flex-1"></div>
             </div>
@@ -179,16 +179,16 @@ export const GithubActivity = () => {
                 <div className="lg:col-span-1 bg-gray-900/20 border border-gray-800 p-6 rounded flex flex-col items-center text-center h-fit">
                     {profile && (
                         <>
-                            <div className="w-24 h-24 rounded-full border-2 border-neon-green/50 p-1 mb-4 relative">
+                            <div className="w-24 h-24 rounded-full border-2 border-neon-blue/50 p-1 mb-4 relative">
                                 <img src={profile.avatar_url} alt={profile.login} className="w-full h-full rounded-full grayscale hover:grayscale-0 transition-all duration-500" />
-                                <div className="absolute bottom-0 right-0 w-4 h-4 bg-neon-green rounded-full border-2 border-black animate-pulse"></div>
+                                <div className="absolute bottom-0 right-0 w-4 h-4 bg-neon-blue rounded-full border-2 border-black animate-pulse"></div>
                             </div>
                             <h3 className="text-white font-bold text-xl mb-1 font-sans">{profile.login}</h3>
                             <p className="text-gray-500 text-xs font-mono mb-4 px-4">{profile.bio}</p>
                             
                             <div className="grid grid-cols-3 gap-4 w-full border-t border-gray-800 pt-4 mb-6">
                                 <div>
-                                    <div className="text-neon-green font-bold text-lg">{profile.public_repos}</div>
+                                    <div className="text-neon-blue font-bold text-lg">{profile.public_repos}</div>
                                     <div className="text-[10px] text-gray-500 uppercase tracking-wider">Repos</div>
                                 </div>
                                 <div>
@@ -215,7 +215,7 @@ export const GithubActivity = () => {
                     <div className="mb-6">
                         <div className="flex items-center justify-between mb-4">
                             <h3 className="text-white font-bold font-sans text-sm flex items-center gap-2">
-                                <Terminal size={14} className="text-neon-green" /> 
+                                <Terminal size={14} className="text-neon-blue" /> 
                                 Contribution Graph
                             </h3>
                             <span className="text-[10px] text-gray-500 font-mono">2,492 contributions in the last year</span>
@@ -227,7 +227,7 @@ export const GithubActivity = () => {
                     <div className="space-y-6">
                         <div className="flex items-center justify-between">
                             <h3 className="text-white font-bold font-sans flex items-center gap-2">
-                                <Code size={16} className="text-neon-green" /> 
+                                <Code size={16} className="text-neon-blue" /> 
                                 Active Repositories
                             </h3>
                             <span className="text-[10px] text-gray-500 font-mono animate-pulse">LIVE_FEED</span>
@@ -240,14 +240,14 @@ export const GithubActivity = () => {
                                     href={repo.html_url} 
                                     target="_blank" 
                                     rel="noopener noreferrer"
-                                    className="border border-gray-800 bg-gray-900/10 p-4 rounded hover:border-neon-green/50 hover:bg-gray-900/30 transition-all group flex flex-col justify-between"
+                                    className="border border-gray-800 bg-gray-900/10 p-4 rounded hover:border-neon-blue/50 hover:bg-gray-900/30 transition-all group flex flex-col justify-between"
                                 >
                                     <div>
                                         <div className="flex justify-between items-start mb-2">
-                                            <h4 className="text-neon-green font-mono text-sm font-bold truncate pr-2 group-hover:underline">
+                                            <h4 className="text-neon-blue font-mono text-sm font-bold truncate pr-2 group-hover:underline">
                                                 {repo.name}
                                             </h4>
-                                            <ExternalLink size={12} className="text-gray-600 group-hover:text-neon-green" />
+                                            <ExternalLink size={12} className="text-gray-600 group-hover:text-neon-blue" />
                                         </div>
                                         <p className="text-gray-500 text-xs mb-4 h-10 overflow-hidden line-clamp-2">
                                             {repo.description || "No description provided."}
@@ -285,7 +285,7 @@ export const GithubActivity = () => {
                                                 [{new Date(event.created_at).toLocaleDateString()}]
                                             </span>
                                             <span className="truncate">
-                                                <span className="text-neon-green">
+                                                <span className="text-neon-blue">
                                                     {event.type.replace('Event', '')}
                                                 </span>
                                                 {' '}on{' '}

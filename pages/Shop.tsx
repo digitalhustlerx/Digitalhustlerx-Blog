@@ -87,7 +87,7 @@ const PRODUCTS: Product[] = [
 ];
 
 const CATEGORY_LABELS = {
-    course: { label: 'Course', icon: Terminal, color: 'text-neon-green' },
+    course: { label: 'Course', icon: Terminal, color: 'text-neon-blue' },
     template: { label: 'Template', icon: FileText, color: 'text-blue-400' },
     ebook: { label: 'eBook', icon: BookOpen, color: 'text-purple-400' },
     tool: { label: 'Tool', icon: Code, color: 'text-yellow-400' }
@@ -117,7 +117,7 @@ export const Shop = () => {
             
             <button 
                 onClick={() => setPage(RoutePage.HOME)} 
-                className="group flex items-center gap-2 text-gray-500 hover:text-neon-green mb-10 transition-colors font-mono text-sm"
+                className="group flex items-center gap-2 text-gray-500 hover:text-neon-blue mb-10 transition-colors font-mono text-sm"
             >
                 <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
                 BACK_TO_ROOT
@@ -125,9 +125,9 @@ export const Shop = () => {
 
             <div className="mb-12 border-b border-gray-800 pb-12">
                 <div className="flex items-center gap-3 mb-4">
-                    <ShoppingCart size={32} className="text-neon-green" />
+                    <ShoppingCart size={32} className="text-neon-blue" />
                     <h1 className="text-4xl md:text-5xl font-bold text-white font-sans tracking-tight">
-                        Digital <span className="text-neon-green">Arsenal</span>
+                        Digital <span className="text-neon-blue">Arsenal</span>
                     </h1>
                 </div>
                 <p className="text-lg text-gray-400 max-w-2xl font-sans leading-relaxed">
@@ -139,24 +139,24 @@ export const Shop = () => {
             {featuredProducts.length > 0 && (
                 <div className="mb-16">
                     <div className="flex items-center gap-4 mb-8 text-gray-400 font-mono text-sm">
-                        <Star size={16} className="text-neon-green fill-neon-green" />
+                        <Star size={16} className="text-neon-blue fill-neon-blue" />
                         <span>featured_product</span>
                         <div className="h-px bg-gray-800 flex-1"></div>
                     </div>
                     
                     {featuredProducts.map(product => (
-                        <div key={product.id} className="border border-neon-green/30 bg-gradient-to-br from-gray-900/50 to-charcoal rounded-lg p-8 hover:border-neon-green transition-all group">
+                        <div key={product.id} className="border border-neon-blue/30 bg-gradient-to-br from-gray-900/50 to-charcoal rounded-lg p-8 hover:border-neon-blue transition-all group">
                             <div className="flex flex-col lg:flex-row gap-8">
                                 <div className="flex-1">
                                     <div className="flex items-center gap-3 mb-4">
-                                        <span className="bg-neon-green/10 text-neon-green border border-neon-green/20 px-3 py-1 text-xs font-mono rounded uppercase">
+                                        <span className="bg-neon-blue/10 text-neon-blue border border-neon-blue/20 px-3 py-1 text-xs font-mono rounded uppercase">
                                             Featured
                                         </span>
                                         <span className="text-gray-500 text-xs font-mono">
                                             {CATEGORY_LABELS[product.category].label}
                                         </span>
                                     </div>
-                                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 font-sans group-hover:text-neon-green transition-colors">
+                                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 font-sans group-hover:text-neon-blue transition-colors">
                                         {product.title}
                                     </h2>
                                     <p className="text-gray-400 mb-6 font-sans leading-relaxed">
@@ -166,7 +166,7 @@ export const Shop = () => {
                                     <ul className="space-y-2 mb-8">
                                         {product.features.map((feature, i) => (
                                             <li key={i} className="flex items-center gap-3 text-gray-300 text-sm font-sans">
-                                                <Check size={16} className="text-neon-green shrink-0" />
+                                                <Check size={16} className="text-neon-blue shrink-0" />
                                                 {feature}
                                             </li>
                                         ))}
@@ -182,7 +182,7 @@ export const Shop = () => {
                                         className={`w-full py-4 px-6 font-bold font-mono text-sm transition-all flex items-center justify-center gap-2 ${
                                             cart.includes(product.id)
                                                 ? 'bg-gray-800 text-gray-400 border border-gray-700'
-                                                : 'bg-neon-green text-black hover:bg-white'
+                                                : 'bg-neon-blue text-black hover:bg-white'
                                         }`}
                                     >
                                         {cart.includes(product.id) ? (
@@ -199,11 +199,11 @@ export const Shop = () => {
             )}
 
             <div className="flex items-center gap-4 mb-8 text-gray-400 font-mono text-sm">
-                <Download size={16} className="text-neon-green" />
+                <Download size={16} className="text-neon-blue" />
                 <span>all_products</span>
                 <div className="h-px bg-gray-800 flex-1"></div>
                 {cart.length > 0 && (
-                    <span className="text-neon-green">{cart.length} in cart</span>
+                    <span className="text-neon-blue">{cart.length} in cart</span>
                 )}
             </div>
 
@@ -212,7 +212,7 @@ export const Shop = () => {
                     onClick={() => setSelectedCategory(null)}
                     className={`px-4 py-2 text-xs font-mono font-bold uppercase tracking-wider transition-colors ${
                         selectedCategory === null 
-                            ? 'bg-neon-green text-black' 
+                            ? 'bg-neon-blue text-black' 
                             : 'bg-gray-800 text-gray-400 hover:text-white'
                     }`}
                 >
@@ -224,7 +224,7 @@ export const Shop = () => {
                         onClick={() => setSelectedCategory(key)}
                         className={`px-4 py-2 text-xs font-mono font-bold uppercase tracking-wider transition-colors ${
                             selectedCategory === key 
-                                ? 'bg-neon-green text-black' 
+                                ? 'bg-neon-blue text-black' 
                                 : 'bg-gray-800 text-gray-400 hover:text-white'
                         }`}
                     >
@@ -241,9 +241,9 @@ export const Shop = () => {
                     return (
                         <div 
                             key={product.id} 
-                            className="border border-gray-800 bg-gray-900/20 rounded-lg overflow-hidden hover:border-neon-green/50 transition-all group flex flex-col"
+                            className="border border-gray-800 bg-gray-900/20 rounded-lg overflow-hidden hover:border-neon-blue/50 transition-all group flex flex-col"
                         >
-                            <div className="h-40 bg-gradient-to-br from-gray-900 to-charcoal flex items-center justify-center border-b border-gray-800 group-hover:border-neon-green/30 transition-colors">
+                            <div className="h-40 bg-gradient-to-br from-gray-900 to-charcoal flex items-center justify-center border-b border-gray-800 group-hover:border-neon-blue/30 transition-colors">
                                 <CategoryIcon size={48} className={`${categoryColor} opacity-50 group-hover:opacity-100 transition-opacity`} />
                             </div>
                             
@@ -253,11 +253,11 @@ export const Shop = () => {
                                         {CATEGORY_LABELS[product.category].label}
                                     </span>
                                     {product.isFeatured && (
-                                        <Star size={14} className="text-neon-green fill-neon-green" />
+                                        <Star size={14} className="text-neon-blue fill-neon-blue" />
                                     )}
                                 </div>
                                 
-                                <h3 className="text-lg font-bold text-white mb-2 font-sans group-hover:text-neon-green transition-colors">
+                                <h3 className="text-lg font-bold text-white mb-2 font-sans group-hover:text-neon-blue transition-colors">
                                     {product.title}
                                 </h3>
                                 
@@ -287,8 +287,8 @@ export const Shop = () => {
                                         onClick={() => toggleCart(product.id)}
                                         className={`py-2 px-4 font-bold font-mono text-xs transition-all flex items-center gap-2 ${
                                             cart.includes(product.id)
-                                                ? 'bg-gray-800 text-neon-green border border-neon-green/30'
-                                                : 'bg-neon-green text-black hover:bg-white'
+                                                ? 'bg-gray-800 text-neon-blue border border-neon-blue/30'
+                                                : 'bg-neon-blue text-black hover:bg-white'
                                         }`}
                                     >
                                         {cart.includes(product.id) ? (
@@ -305,15 +305,15 @@ export const Shop = () => {
             </div>
 
             {cart.length > 0 && (
-                <div className="fixed bottom-0 left-0 right-0 bg-charcoal border-t border-neon-green/30 p-4 z-40">
+                <div className="fixed bottom-0 left-0 right-0 bg-charcoal border-t border-neon-blue/30 p-4 z-40">
                     <div className="max-w-6xl mx-auto flex items-center justify-between">
                         <div className="flex items-center gap-4">
-                            <ShoppingCart size={20} className="text-neon-green" />
+                            <ShoppingCart size={20} className="text-neon-blue" />
                             <span className="text-white font-sans">
                                 {cart.length} {cart.length === 1 ? 'item' : 'items'} in cart
                             </span>
                         </div>
-                        <button className="bg-neon-green text-black px-8 py-3 font-bold font-mono text-sm hover:bg-white transition-colors flex items-center gap-2">
+                        <button className="bg-neon-blue text-black px-8 py-3 font-bold font-mono text-sm hover:bg-white transition-colors flex items-center gap-2">
                             <Zap size={16} />
                             CHECKOUT_${PRODUCTS.filter(p => cart.includes(p.id)).reduce((sum, p) => sum + p.price, 0)}
                         </button>

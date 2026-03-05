@@ -46,7 +46,7 @@ export const Admin = () => {
             <div className="flex justify-between items-end mb-10 border-b border-gray-800 pb-6">
                 <div>
                     <h1 className="text-3xl font-bold text-white font-mono flex items-center gap-3">
-                        <LayoutDashboard className="text-neon-green" /> 
+                        <LayoutDashboard className="text-neon-blue" /> 
                         Admin_Console
                     </h1>
                     <p className="text-gray-500 text-sm mt-2 font-mono">&gt; Access Level: Root</p>
@@ -60,7 +60,7 @@ export const Admin = () => {
                     </button>
                     <button 
                         onClick={() => setView('CREATE')} 
-                        className={`px-4 py-2 text-xs font-mono font-bold uppercase tracking-wider transition-colors ${view === 'CREATE' ? 'bg-neon-green text-black' : 'text-gray-500 hover:text-neon-green'}`}
+                        className={`px-4 py-2 text-xs font-mono font-bold uppercase tracking-wider transition-colors ${view === 'CREATE' ? 'bg-neon-blue text-black' : 'text-gray-500 hover:text-neon-blue'}`}
                     >
                         New Entry
                     </button>
@@ -79,7 +79,7 @@ export const Admin = () => {
                         <div key={post.id} className="grid grid-cols-12 gap-4 p-4 border-b border-gray-800 hover:bg-gray-800/30 transition-colors items-center">
                             <div className="col-span-6 font-sans font-medium text-gray-200 truncate pr-4">{post.title}</div>
                             <div className="col-span-2">
-                                <span className="bg-gray-800 text-neon-green px-2 py-1 rounded text-xs font-mono border border-gray-700">{post.category}</span>
+                                <span className="bg-gray-800 text-neon-blue px-2 py-1 rounded text-xs font-mono border border-gray-700">{post.category}</span>
                             </div>
                             <div className="col-span-2 text-sm text-gray-500 font-mono">{post.date}</div>
                             <div className="col-span-2 text-right">
@@ -100,22 +100,22 @@ export const Admin = () => {
                     <form onSubmit={handleSubmit} className="space-y-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="space-y-2">
-                                <label className="text-xs font-mono text-neon-green uppercase">Title</label>
+                                <label className="text-xs font-mono text-neon-blue uppercase">Title</label>
                                 <input 
                                     name="title" 
                                     value={formData.title} 
                                     onChange={handleChange}
-                                    className="w-full bg-black border border-gray-700 p-3 text-white focus:border-neon-green focus:outline-none focus:ring-1 focus:ring-neon-green/50 transition-all font-sans" 
+                                    className="w-full bg-black border border-gray-700 p-3 text-white focus:border-neon-blue focus:outline-none focus:ring-1 focus:ring-neon-blue/50 transition-all font-sans" 
                                     placeholder="Enter article title..." 
                                 />
                             </div>
                             <div className="space-y-2">
-                                <label className="text-xs font-mono text-neon-green uppercase">Category</label>
+                                <label className="text-xs font-mono text-neon-blue uppercase">Category</label>
                                 <select 
                                     name="category" 
                                     value={formData.category} 
                                     onChange={handleChange}
-                                    className="w-full bg-black border border-gray-700 p-3 text-white focus:border-neon-green focus:outline-none transition-all font-mono"
+                                    className="w-full bg-black border border-gray-700 p-3 text-white focus:border-neon-blue focus:outline-none transition-all font-mono"
                                 >
                                     <option value="">Select Category</option>
                                     <option value="AI Tools">AI Tools</option>
@@ -127,24 +127,24 @@ export const Admin = () => {
                         </div>
 
                         <div className="space-y-2">
-                            <label className="text-xs font-mono text-neon-green uppercase">Excerpt</label>
+                            <label className="text-xs font-mono text-neon-blue uppercase">Excerpt</label>
                             <input 
                                 name="excerpt" 
                                 value={formData.excerpt} 
                                 onChange={handleChange}
-                                className="w-full bg-black border border-gray-700 p-3 text-gray-300 focus:border-neon-green focus:outline-none transition-all font-sans text-sm" 
+                                className="w-full bg-black border border-gray-700 p-3 text-gray-300 focus:border-neon-blue focus:outline-none transition-all font-sans text-sm" 
                                 placeholder="Short summary for the card view..." 
                             />
                         </div>
 
                         <div className="space-y-2">
-                            <label className="text-xs font-mono text-neon-green uppercase">Content (HTML Supported)</label>
+                            <label className="text-xs font-mono text-neon-blue uppercase">Content (HTML Supported)</label>
                             <textarea 
                                 name="content" 
                                 value={formData.content} 
                                 onChange={handleChange}
                                 rows={10}
-                                className="w-full bg-black border border-gray-700 p-3 text-gray-300 focus:border-neon-green focus:outline-none transition-all font-mono text-sm" 
+                                className="w-full bg-black border border-gray-700 p-3 text-gray-300 focus:border-neon-blue focus:outline-none transition-all font-mono text-sm" 
                                 placeholder="<p>Write your content here...</p>" 
                             />
                             <p className="text-[10px] text-gray-600 font-mono text-right">HTML tags enabled for formatting.</p>
@@ -154,7 +154,7 @@ export const Admin = () => {
                             <button type="button" onClick={() => setView('LIST')} className="px-6 py-3 border border-gray-700 text-gray-400 font-mono text-sm hover:text-white transition-colors">
                                 CANCEL
                             </button>
-                            <button type="submit" className="px-6 py-3 bg-neon-green text-black font-bold font-mono text-sm hover:bg-white transition-colors flex items-center gap-2">
+                            <button type="submit" className="px-6 py-3 bg-neon-blue text-black font-bold font-mono text-sm hover:bg-white transition-colors flex items-center gap-2">
                                 <Save size={16} /> SAVE_ENTRY
                             </button>
                         </div>

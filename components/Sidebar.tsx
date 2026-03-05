@@ -19,7 +19,7 @@ export const Sidebar = () => {
                 
                 <div className="flex justify-between items-center p-6 border-b border-gray-800 shrink-0">
                     <div className="text-xl font-bold text-white tracking-widest font-mono">&lt;MENU/&gt;</div>
-                    <button onClick={toggleSidebar} className="text-gray-400 hover:text-neon-green transition-colors">
+                    <button onClick={toggleSidebar} className="text-gray-400 hover:text-neon-blue transition-colors">
                         <X size={24} />
                     </button>
                 </div>
@@ -30,27 +30,27 @@ export const Sidebar = () => {
                     <div className="space-y-2">
                         <p className="text-xs text-gray-500 font-mono mb-4 uppercase tracking-widest">[ System_Nav ]</p>
                         
-                        <button onClick={() => setPage(RoutePage.HOME)} className="w-full flex items-center gap-3 text-gray-300 hover:text-neon-green hover:bg-gray-900 p-3 rounded transition-all group text-left">
+                        <button onClick={() => setPage(RoutePage.HOME)} className="w-full flex items-center gap-3 text-gray-300 hover:text-neon-blue hover:bg-gray-900 p-3 rounded transition-all group text-left">
                             <Home size={18} className="group-hover:animate-pulse" />
                             <span className="font-mono text-sm">/home</span>
                         </button>
                         
-                        <button onClick={() => setPage(RoutePage.BLOG_LIST)} className="w-full flex items-center gap-3 text-gray-300 hover:text-neon-green hover:bg-gray-900 p-3 rounded transition-all group text-left">
+                        <button onClick={() => setPage(RoutePage.BLOG_LIST)} className="w-full flex items-center gap-3 text-gray-300 hover:text-neon-blue hover:bg-gray-900 p-3 rounded transition-all group text-left">
                             <FileText size={18} />
                             <span className="font-mono text-sm">/articles</span>
                         </button>
 
-                        <button onClick={() => setPage(RoutePage.SHOP)} className="w-full flex items-center gap-3 text-gray-300 hover:text-neon-green hover:bg-gray-900 p-3 rounded transition-all group text-left">
+                        <button onClick={() => setPage(RoutePage.SHOP)} className="w-full flex items-center gap-3 text-gray-300 hover:text-neon-blue hover:bg-gray-900 p-3 rounded transition-all group text-left">
                             <ShoppingCart size={18} />
                             <span className="font-mono text-sm">/shop</span>
                         </button>
 
-                        <button onClick={() => setPage(RoutePage.AI_MASTERY)} className="w-full flex items-center gap-3 text-white hover:text-neon-green hover:bg-gray-900 p-3 rounded transition-all group text-left bg-gray-900/50 border border-gray-800">
-                            <Terminal size={18} className="text-neon-green" />
+                        <button onClick={() => setPage(RoutePage.AI_MASTERY)} className="w-full flex items-center gap-3 text-white hover:text-neon-blue hover:bg-gray-900 p-3 rounded transition-all group text-left bg-gray-900/50 border border-gray-800">
+                            <Terminal size={18} className="text-neon-blue" />
                             <span className="font-mono text-sm font-bold">/cursor_protocol</span>
                         </button>
 
-                        <button onClick={() => setPage(RoutePage.ADMIN)} className="w-full flex items-center gap-3 text-gray-300 hover:text-neon-green hover:bg-gray-900 p-3 rounded transition-all group text-left">
+                        <button onClick={() => setPage(RoutePage.ADMIN)} className="w-full flex items-center gap-3 text-gray-300 hover:text-neon-blue hover:bg-gray-900 p-3 rounded transition-all group text-left">
                             <Settings size={18} />
                             <span className="font-mono text-sm">/admin_panel</span>
                         </button>
@@ -61,7 +61,7 @@ export const Sidebar = () => {
                         <p className="text-xs text-gray-500 font-mono mb-4 uppercase tracking-widest">[ Tags ]</p>
                         
                         <div className="flex items-center gap-3 text-gray-400 hover:text-white p-2 cursor-pointer transition-colors">
-                            <Cpu size={16} className="text-neon-green" />
+                            <Cpu size={16} className="text-neon-blue" />
                             <span className="font-sans text-sm">Artificial Intelligence</span>
                         </div>
                         <div className="flex items-center gap-3 text-gray-400 hover:text-white p-2 cursor-pointer transition-colors">
@@ -79,16 +79,16 @@ export const Sidebar = () => {
                 <div className="p-6 border-t border-gray-800 shrink-0">
                     <p className="text-xs text-gray-500 font-mono mb-4 uppercase tracking-widest">[ Connect ]</p>
                     <div className="flex gap-6">
-                        <a href="#" className="text-gray-400 hover:text-neon-green transition-transform hover:-translate-y-1">
+                        <a href="#" className="text-gray-400 hover:text-neon-blue transition-transform hover:-translate-y-1">
                             <Twitter size={20} />
                         </a>
-                        <a href="#" className="text-gray-400 hover:text-neon-green transition-transform hover:-translate-y-1">
+                        <a href="#" className="text-gray-400 hover:text-neon-blue transition-transform hover:-translate-y-1">
                             <Github size={20} />
                         </a>
-                        <a href="#" className="text-gray-400 hover:text-neon-green transition-transform hover:-translate-y-1">
+                        <a href="#" className="text-gray-400 hover:text-neon-blue transition-transform hover:-translate-y-1">
                             <Linkedin size={20} />
                         </a>
-                        <a href="#" className="text-gray-400 hover:text-neon-green transition-transform hover:-translate-y-1">
+                        <a href="#" className="text-gray-400 hover:text-neon-blue transition-transform hover:-translate-y-1">
                             <Youtube size={20} />
                         </a>
                     </div>

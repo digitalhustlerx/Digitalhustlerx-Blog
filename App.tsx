@@ -22,7 +22,7 @@ const TopBar = () => {
             </div>
             
             <div className="hidden md:flex gap-8 text-xs uppercase tracking-widest text-gray-400 font-mono">
-                <span className="text-neon-green">System Status: Online</span>
+                <span className="text-neon-blue">System Status: Online</span>
             </div>
         </nav>
     );
@@ -56,8 +56,8 @@ const MainContent = () => {
     }
 
     return (
-        <div className="min-h-screen bg-black text-gray-300 font-sans selection:bg-neon-green selection:text-black flex flex-col">
-            <div className="fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-neon-green to-blue-500 z-50"></div>
+        <div className="min-h-screen bg-black text-gray-300 font-sans selection:bg-neon-blue selection:text-black flex flex-col">
+            <div className="fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-neon-blue to-blue-500 z-50"></div>
             
             <TopBar />
             

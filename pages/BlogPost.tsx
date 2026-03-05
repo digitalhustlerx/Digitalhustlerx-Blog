@@ -12,7 +12,7 @@ export const BlogPost = () => {
             <div className="flex flex-col items-center justify-center min-h-[50vh] text-gray-500 font-mono">
                 <div className="text-4xl mb-4 text-red-500">404</div>
                 <p>ERROR: DATA_CORRUPTION_DETECTED</p>
-                <button onClick={() => setPage(RoutePage.HOME)} className="mt-6 text-neon-green hover:underline">
+                <button onClick={() => setPage(RoutePage.HOME)} className="mt-6 text-neon-blue hover:underline">
                     &lt; Return Home
                 </button>
             </div>
@@ -25,7 +25,7 @@ export const BlogPost = () => {
             {/* Nav Back */}
             <button 
                 onClick={() => setPage(RoutePage.HOME)} 
-                className="group flex items-center gap-2 text-gray-500 hover:text-neon-green mb-10 transition-colors font-mono text-sm"
+                className="group flex items-center gap-2 text-gray-500 hover:text-neon-blue mb-10 transition-colors font-mono text-sm"
             >
                 <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
                 BACK_TO_ROOT
@@ -34,7 +34,7 @@ export const BlogPost = () => {
             {/* Header */}
             <header className="mb-12 border-b border-gray-800 pb-12">
                 <div className="flex items-center gap-4 mb-6">
-                    <span className="bg-neon-green/10 text-neon-green border border-neon-green/20 px-3 py-1 text-xs font-mono rounded">
+                    <span className="bg-neon-blue/10 text-neon-blue border border-neon-blue/20 px-3 py-1 text-xs font-mono rounded">
                         {post.category}
                     </span>
                     <span className="text-gray-500 text-xs font-mono">{post.date}</span>
@@ -68,7 +68,7 @@ export const BlogPost = () => {
 
             {/* Content */}
             <div 
-                className="prose prose-invert prose-lg max-w-none prose-headings:font-sans prose-headings:text-white prose-p:text-gray-300 prose-a:text-neon-green prose-pre:bg-gray-900 prose-pre:border prose-pre:border-gray-800"
+                className="prose prose-invert prose-lg max-w-none prose-headings:font-sans prose-headings:text-white prose-p:text-gray-300 prose-a:text-neon-blue prose-pre:bg-gray-900 prose-pre:border prose-pre:border-gray-800"
                 dangerouslySetInnerHTML={{ __html: post.content }}
             />
 
@@ -77,7 +77,7 @@ export const BlogPost = () => {
                 <div className="w-16 h-16 bg-gray-800 rounded-full mb-4 flex items-center justify-center text-2xl">👨‍💻</div>
                 <h3 className="text-white font-bold font-sans">Digital Hustler X</h3>
                 <p className="text-gray-500 text-sm mt-2 font-mono">System Administrator</p>
-                <button className="mt-6 border border-neon-green text-neon-green px-6 py-2 text-sm font-mono hover:bg-neon-green hover:text-black transition-colors">
+                <button className="mt-6 border border-neon-blue text-neon-blue px-6 py-2 text-sm font-mono hover:bg-neon-blue hover:text-black transition-colors">
                     SUBSCRIBE_NEWSLETTER
                 </button>
             </div>

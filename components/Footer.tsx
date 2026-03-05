@@ -17,16 +17,16 @@ export const Footer = () => {
 
                     {/* Socials */}
                     <div className="flex gap-6">
-                        <a href="#" className="text-gray-400 hover:text-neon-green transition-transform hover:-translate-y-1">
+                        <a href="#" className="text-gray-400 hover:text-neon-blue transition-transform hover:-translate-y-1">
                             <Twitter size={20} />
                         </a>
-                        <a href="#" className="text-gray-400 hover:text-neon-green transition-transform hover:-translate-y-1">
+                        <a href="#" className="text-gray-400 hover:text-neon-blue transition-transform hover:-translate-y-1">
                             <Github size={20} />
                         </a>
-                        <a href="#" className="text-gray-400 hover:text-neon-green transition-transform hover:-translate-y-1">
+                        <a href="#" className="text-gray-400 hover:text-neon-blue transition-transform hover:-translate-y-1">
                             <Linkedin size={20} />
                         </a>
-                        <a href="#" className="text-gray-400 hover:text-neon-green transition-transform hover:-translate-y-1">
+                        <a href="#" className="text-gray-400 hover:text-neon-blue transition-transform hover:-translate-y-1">
                             <Youtube size={20} />
                         </a>
                     </div>
